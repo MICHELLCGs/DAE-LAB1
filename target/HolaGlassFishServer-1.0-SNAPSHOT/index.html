@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+            html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #292929;
+  overflow: hidden;
+                  background-image: url('https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+                background-size:cover;
+                background-position: center;
+}
+
+nav {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  left: 0;
+  width: 319px;
+  display: table;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
+nav a {
+  position: relative;
+  width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #949494;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+}
+
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: palevioletred;
+}
+nav a:nth-child(4):before {
+  background-color: #00A67D;
+}
+
+nav a:nth-child(4):after {
+  background-color: #36287F;
+}
+#indicator {
+  position: absolute;
+  left: 6%; /* Inicialmente debajo de "CUIDADOS" */
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+nav a:nth-child(1):hover ~ #indicator {
+  left: 6%;
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 28%;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 54%;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+nav a:nth-child(4):hover ~ #indicator {
+  left: 82%;
+  background: linear-gradient(130deg, #6DB674, #36287F);
+}
+        main {
+            text-align: center;
+            color: #fff;
+            font-size: 3rem;
+            margin-top: 10%;
+        }
+
+span {
+  position: absolute;
+  left: 50%;
+    font-family: 'Poppins', sans-serif;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #EEE8AA;
+  font-size: 124px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+span::before {
+  content: "BIENVENIDO";
+    font-family: 'Poppins', sans-serif;
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 2px,
+    #593304 2px,
+    #593304 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+  transition: 1s;
+}
+
+span::after {
+  content: "BIENVENIDO";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    #593304 2px,
+    #593304 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+span:hover:before {
+  top: 10px;
+  left: 10px;
+}
+
+span:hover:after {
+  top: -10px;
+  left: -10px;
+} 
+
+        .container-images {
+            max-width: 1000px; 
+            margin: 0 auto;
+            margin-top: 240px;
+font-family: 'Roboto', sans-serif;
+            padding: 10px; 
+            background-color: rgba(137, 109, 57, 0.5); 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color:white;
+        }
+        .container-ima{
+            margin-top:100px;
+        }
+
+        </style>
+    </head>
+    
+    <body>
+ <nav>
+  <a href="index.html">HOME</a>
+  <a href="CUIDADOS.html">CUIDADOS</a>
+  <a href="COMIDAS.html">COMIDAS</a>
+  <a href="ACCESORIOS.html">ACCESORIOS</a>
+  
+  <div id="indicator"></div>
+</nav>
+        <main>
+            <DIV >
+                 <span>BIENVENIDO</span>
+                          <div  class="container-images">
+                              <p class="abajo">¡Gracias por visitar nuestro sitio web! Esperamos que encuentres información útil para tus mininos en casa</p>
+        </div>
+<div class="container-ima">
+  <a href="https://github.com/MICHELLCGs">
+    <i class="fab fa-github" style="color: rgb(124, 62, 0);"></i>
+  </a>
+</div>
+            </DIV>
+        </main>
+
+    </body>
+</html> 

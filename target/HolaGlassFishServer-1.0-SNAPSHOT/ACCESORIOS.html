@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-color: #292929;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            position: absolute;
+            top: 5%;
+            right: 0;
+            left: 0;
+            width: 319px;
+            display: table;
+            margin: 0 auto;
+            transform: translateY(-50%);
+        }
+
+        nav a {
+            position: relative;
+            width: 33.333%;
+            display: table-cell;
+            text-align: center;
+            color: #949494;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: 0.2s ease color;
+        }
+
+        nav a:before,
+        nav a:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.2s ease transform;
+        }
+
+        nav a:before {
+            top: 0;
+            left: 10px;
+            width: 6px;
+            height: 6px;
+        }
+
+        nav a:after {
+            top: 5px;
+            left: 18px;
+            width: 4px;
+            height: 4px;
+        }
+
+        nav a:nth-child(1):before {
+            background-color: yellow;
+        }
+
+        nav a:nth-child(1):after {
+            background-color: red;
+        }
+
+        nav a:nth-child(2):before {
+            background-color: #00e2ff;
+        }
+
+        nav a:nth-child(2):after {
+            background-color: #89ff00;
+        }
+
+        nav a:nth-child(3):before {
+            background-color: purple;
+        }
+
+        nav a:nth-child(3):after {
+            background-color: palevioletred;
+        }
+
+        nav a:nth-child(4):before {
+            background-color: #00A67D;
+        }
+
+        nav a:nth-child(4):after {
+            background-color: #36287F;
+        }
+
+        #indicator {
+            position: absolute;
+            left: 82%; /* Inicialmente debajo de "CUIDADOS" */
+            bottom: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: 0.2s ease left;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        nav a:hover:before,
+        nav a:hover:after {
+            transform: scale(1);
+        }
+
+        nav a:nth-child(1):hover ~ #indicator {
+            left: 6%;
+            background: linear-gradient(130deg, yellow, red);
+        }
+
+        nav a:nth-child(2):hover ~ #indicator {
+            left: 28%;
+            background: linear-gradient(130deg, #00e2ff, #89ff00);
+        }
+
+        nav a:nth-child(3):hover ~ #indicator {
+            left: 54%;
+            background: linear-gradient(130deg, purple, palevioletred);
+        }
+
+        nav a:nth-child(4):hover ~ #indicator {
+            left: 82%;
+            background: linear-gradient(130deg, #6DB674, #36287F);
+        }
+
+        main {
+            text-align: center;
+            color: #fff;
+            font-size: 3rem;
+            margin-top: 10%;
+        }
+
+        .container {
+            align-items: center;
+            display: flex;
+            height: 60vh;
+            justify-content: space_between;
+            margin: 0 200px ;
+        }
+ .cta:nth-child(2),
+        .cta:nth-child(3) {
+            background: #333;
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            margin-left: 100px;
+            
+        }
+                .cta:nth-child(2) .text,
+        .cta:nth-child(3) .text {
+            padding: 10px;
+        }
+                .cta:nth-child(2) .text h2,
+        .cta:nth-child(3) .text h2 {
+            font-size: 1.5rem;
+        }
+
+        .cta:nth-child(2) .text p,
+        .cta:nth-child(3) .text p {
+            font-size: 1rem;
+        }
+        .cta {
+            background: #333;
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+        }
+
+        .cta:hover img {
+            top: -10%;
+            filter: brightness(70%);
+        }
+
+        .cta:hover .text {
+            bottom: 0;
+        }
+
+        .cta img {
+            bottom: 0;
+            filter: brightness(100%);
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 0.5s ease-in-out;
+            width: 115%;
+        }
+
+        .cta .text {
+            bottom: -40%;
+            padding: 15px;
+            position: absolute;
+            transition: 0.5s ease-in-out;
+        }
+
+        .cta .text h2 {
+            color: #fff;
+            display: inline-block;
+            font-weight: 300;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .cta .text p {
+            color: #fff;
+            font-weight: 300;
+        }
+         .cta .text {
+        padding: 10px; /* Reducir el espacio interno */
+    }
+
+    .cta .text h2 {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente del encabezado h2 */
+        margin-bottom: 5px;
+    }
+
+    .cta .text p {
+        font-size: 1rem; /* Reducir el tamaño de la fuente del párrafo */
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="CUIDADOS.html">CUIDADOS</a>
+        <a href="COMIDAS.html">COMIDAS</a>
+        <a href="ACCESORIOS.html">ACCESORIOS</a>
+
+        <div id="indicator"></div>
+    </nav>
+ <main>
+        <div class="container">
+            <!-- Tarjeta 1 -->
+            <div class="cta">
+                <img src="https://images.unsplash.com/photo-1636543459637-f513301a3c3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+                <div class="text">
+                    <h2>Rascador Catit Zoo</h2>
+                    <p>Los Rascadores Catit Zoo facilitan a tu gato que satisfaga el impulso natural de rascar, sin dañar los muebles de tu casa.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 (Duplicada) -->
+            <div class="cta">
+                <img src="https://images.unsplash.com/photo-1615332591802-dddd86b35238?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+                <div class="text">
+                    <h2>Juguete Kong Active - Varilla con catnip </h2>
+                    <p>El juguete KONG Active Feather Teaser Catnip Toy, está diseñado para el juego interactivo de tu gato, y contiene hierba gatera KONG Premium.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 (Duplicada) -->
+            <div class="cta">
+                <img src="https://images.unsplash.com/photo-1615486364134-62a4c72c822d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+                <div class="text">
+                    <h2>Kong - Crackles Winkz Cat</h2>
+                    <p>El KONG Crackles Winkz está repleto de sonidos de crujido que despiertan los instintos naturales de bateo. </p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script>
+        // Tu script aquí, si es necesario
+    </script>
+</body
